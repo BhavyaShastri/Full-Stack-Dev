@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inch to Feet Conversion</title>
+</head>
+<body>
+    <input oninput=feet() onchange=feet() type="textbox" row="1" col="5" id="inch" placeholder="Inches">
+    <input oninput=inches() onchange=inches() type="textbox" row="1" col="5" id="feet" placeholder="Feet">
+</body>
+<script>
+    function feet()
+    {
+        var t=document.getElementById("inch");
+        var res=(t.value/12);
+        document.getElementById("feet").value=res;
+    } 
+    function inches()
+    {
+        var t=document.getElementById("feet");
+        var res=(t.value*12);
+        document.getElementById("inch").value=res;
+    } 
+    
+</script>
+</html>
