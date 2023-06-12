@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="style.css" type="text/css"?>
+<?xml-model href="validate.dtd" type="application/xml-dtd"?>
+<Book-info>
+    <title>Harry Potter</title>
+    <author>J K Rowling</author>
+    <isbn>978-0-395-19395-8</isbn>
+    <publisher-name>Bhavya Shastri</publisher-name>
+    <edition>5th</edition>
+    <price>29.99</price>
+</Book-info>
