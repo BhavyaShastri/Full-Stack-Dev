@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML PARSING</title>
+</head>
+<style>
+    table,th,td,tr{
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+    table td:nth-child(2){ 
+        color: red;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    td,th{
+        padding: 10px;
+        text-align: center;
+    }
+
+</style>
+<body>
+    <table id="book-info">
+        <tr>
+            <th>
+                Title
+            </th>
+        
+            <th id="author">
+                Author Name
+            </th>
+            <th>
+                ISBN Number
+            </th>
+            <th>
+                Publisher Name
+            </th>
+            <th>
+                Edition
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+        
+    </table>
+</body>
+<script>
+    var pars=new DOMParser();
+    var xml=`<Book-info>
+        <Book>
+        <title>Harry Potter</title>
+        <author>J K Rowling</author>
+        <isbn>978-0-395-19395-8</isbn>
+        <publisher-name>Ambuj Bhandari</publisher-name>
+        <edition>5th</edition>
+        <price>29.99</price>
+        </Book>
+        <Book>
+        <title>Harry Putter</title>
+        <author>J K Rowling</author>
+        <isbn>978-0-395-19395-8</isbn>
+        <publisher-name>Ambuj Bhandari</publisher-name>
+        <edition>5th</edition>
+        <price>29.99</price>
+        </Book>
+    </Book-info>`
+    
+    var tab=document.getElementById("book-info");
+    var xmlDoc=pars.parseFromString(xml,"text/xml");
+    var xmldat=xmlDoc.getElementsByTagName("Book");
+
+    for(var i=0;i<xmldat.length;i++)
+    {
+        var dat = xmldat[i];
+        var title = dat.getElementsByTagName("title")[0].textContent;
+        var author = dat.getElementsByTagName("author")[0].textContent;
+        var isbn = dat.getElementsByTagName("isbn")[0].textContent;
+        var pubname = dat.getElementsByTagName("publisher-name")[0].textContent;
+        var edi = dat.getElementsByTagName("edition")[0].textContent;
+        var price = dat.getElementsByTagName("price")[0].textContent;
+  
+        var dataRow = document.createElement("tr");
+        dataRow.innerHTML = "<td>" + title + "</td><td>" + author +"</td><td>" + isbn +"</td><td>" + pubname +"</td><td>" + edi +"</td><td>" + price + "</td>";
+        tab.appendChild(dataRow);
+    }
+    
+</script>
+</html>
