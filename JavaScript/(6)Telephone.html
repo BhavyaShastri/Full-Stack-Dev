@@ -4,30 +4,39 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Show Day of the week</title>
+        <title>Validate Area Code and Phone Number</title>
 </head>
 <style>
         input{
         margin: 5px;
         }
-        #btn{
-        display: block;
-        }
 </style>
 <body>
-        <label for="Birthdate">Birth Date:</label>
-        <input type="text" id="bday" placeholder="YYYY-MM-DD">
-        <input type="submit" onclick="show()" id="btn"> 
-        <label for="Day of the week">Day of the week: </label>
-        <input type="text" name="" id="dow">
+        <label>Enter Phone number [in the form(555) 555-5555]:</label>
+        <input type="text" name="phone" id="phone" placeholder="(xxx) xxx-xxxx" size="14" maxlength="14" onchange="validate()" /><br/>
+        <label>Area Code: </label>
+        <input type="text" name="area" id="area"/><br/>
+        <label>Number: </label>
+        <input type="text" name="telephone" id="telephone"/>
 </body>
 <script>
-        function show() {
-        var dob=document.getElementById("bday").value;
-        var msg=document.getElementById("dow");
-        const d = new Date(dob);
-        var arr=["Sunday","Monday","Tuesday","Wednesday","Thusrday","Friday","Saturday"];
-        msg.value=arr[d.getDay()];
+        function validate() {
+            var number=document.getElementById("phone").value;
+            if (number.charAt(0) != "(" || number.charAt(4) != ")" || number.charAt(5) != " " || number.charAt(9) != "-") {
+            alert("Invalid Format....Please Enter again!");
+            return;
+            }
+            for (var i = 1; i < 14; i++) {
+                if (i==0 || i==4 || i==5 || i==9)
+                    continue;
+                else if(isNaN(number.charAt(i))) {
+                    alert("Invalid Format....Please Check again!");
+            return;
+            }
+        }
+        var areac=number.split(" ");
+        document.getElementById("area").value=areac[0];
+        document.getElementById("telephone").value=areac[1];
         }
 </script>
 </html>
