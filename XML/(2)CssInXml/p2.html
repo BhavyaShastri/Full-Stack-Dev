@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML PARSING</title>
+</head>
+<style>
+    table,th,td,tr{
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+    table td:nth-child(2){ 
+        color: red;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    td,th{
+        padding: 10px;
+        text-align: center;
+    }
+
+</style>
+<body>
+    <table id="book-info">
+        <tr>
+            <th>
+                Title
+            </th>
+        
+            <th id="author">
+                Author Name
+            </th>
+            <th>
+                ISBN Number
+            </th>
+            <th>
+                Publisher Name
+            </th>
+            <th>
+                Edition
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+        
+    </table>
+</body>
+<script>
+    var pars=new DOMParser();
+    var xml="<Book-info>"+
+        "<title>Harry Potter</title>"+
+        "<author>J K Rowling</author>"+
+        "<isbn>978-0-395-19395-8</isbn>"+
+        "<publisher-name>Bhavya</publisher-name>"+
+        "<edition>5th</edition>"+
+        "<price>29.99</price>"+
+    "</Book-info>";
+    var xml2="<Book-info>"+
+        "<title>Alice in La La Land</title>"+
+        "<author>Netlify Sharma</author>"+
+        "<isbn>978-0-395-19395-8</isbn>"+
+        "<publisher-name>Khushi</publisher-name>"+
+        "<edition>1st</edition>"+
+        "<price>29.99</price>"+
+    "</Book-info>";
+    var tab=document.getElementById("book-info");
+    var xmlDoc=pars.parseFromString(xml,"text/xml");
+    var row=tab.insertRow(1);
+    var cell1=row.insertCell(0);
+    var cell2=row.insertCell(1);
+    var cell3=row.insertCell(2);
+    var cell4=row.insertCell(3);
+    var cell5=row.insertCell(4);
+    var cell6=row.insertCell(5);
+    
+
+    cell1.innerHTML=xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+    cell2.innerHTML=xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+    cell3.innerHTML=xmlDoc.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;
+    cell4.innerHTML=xmlDoc.getElementsByTagName("publisher-name")[0].childNodes[0].nodeValue;
+    cell5.innerHTML=xmlDoc.getElementsByTagName("edition")[0].childNodes[0].nodeValue;
+    cell6.innerHTML=xmlDoc.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+
+    var xmlDoc2=pars.parseFromString(xml2,"text/xml");
+    var row=tab.insertRow(1);
+    var cell1=row.insertCell(0);
+    var cell2=row.insertCell(1);
+    var cell3=row.insertCell(2);
+    var cell4=row.insertCell(3);
+    var cell5=row.insertCell(4);
+    var cell6=row.insertCell(5);
+    
+
+    cell1.innerHTML=xmlDoc2.getElementsByTagName("title")[0].childNodes[0].nodeValue;;
+    cell2.innerHTML=xmlDoc2.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+    cell3.innerHTML=xmlDoc2.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;
+    cell4.innerHTML=xmlDoc2.getElementsByTagName("publisher-name")[0].childNodes[0].nodeValue;
+    cell5.innerHTML=xmlDoc2.getElementsByTagName("edition")[0].childNodes[0].nodeValue;
+    cell6.innerHTML=xmlDoc2.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+</script>
+</html>
