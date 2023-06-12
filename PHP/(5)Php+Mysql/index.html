@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Book Info</title>
+</head>
+<style>
+        table{
+        margin: 70px 550px;
+        }
+        table,tr,td{
+        border: 5px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+        text-align: center;
+        }
+        label,input,select{
+        margin-bottom: 10px;;
+        }
+        h2,h3{
+        text-align: center;
+        }
+</style>
+<body>
+        <h2>Book Information and Management System</h2>
+        <h3>Enter the Records of a Book</h3>
+        <form action="insert.php" method="post">
+            <table >
+                    <tr>
+                        <td>Enter the Accession Number of the Book: </td>
+                        <td><input type="text" name="Aname" required></td>
+                    </tr>
+                    <tr>
+                        <td>Enter the title of the Book: </td>
+                        <td><input type="text" name="title" required></td>
+                    </tr>
+                    <tr>
+                        <td>Enter the Author of the Book: </td>
+                        <td><input type="text" name="auth" required></td>
+                    </tr>
+                    <tr>
+                        <td>Enter the Edition of the Book: </td>
+                        <td><input type="text" name="ed" required></td>
+                    </tr>
+                    <tr>
+                        <td>Enter the Publisher of the Book: </td>
+                        <td><input type="text" name="pub" required></td>
+                    </tr>
+                    <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </td>
+                    </tr>
+            </table>
+        </form>
+</body>
+</html>
