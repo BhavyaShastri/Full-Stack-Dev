@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Refresh</title>
+</head>
+<style>
+        p{
+        text-align: center;
+        font-size: x-large;
+        }   
+</style>
+<body>
+        <p id="para">Hello World!!</p>
+</body>
+<script>
+        function Refresh(){
+        var arr=["My" , "name" , "is" , "Khushi" , "Hello"];
+        var p=document.getElementById("para");
+        var r=Math.floor(Math.random()*arr.length);
+        p.innerHTML=arr[r];
+        }
+        setInterval('Refresh()',6000);
+</script>
+</html>
