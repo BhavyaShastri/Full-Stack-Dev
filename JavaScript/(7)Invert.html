@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invert Filter</title>
+</head>
+<body>
+    <h1>Hover on the Image to invert it.</h1>
+    <img onmouseover="invert()" onmouseout="revert()" src="https://static.javatpoint.com/tutorial/artificial-neural-network/images/artificial-neural-network3.png" alt="cnn" id="image">
+</body>
+<script>
+    function invert(){
+        var img = document.getElementById("image");
+        img.style.filter="invert(100%)";
+    }
+    function revert(){
+        var img = document.getElementById("image");
+        img.style.filter="invert(0%)";
+    }
+</script>
+</html>
