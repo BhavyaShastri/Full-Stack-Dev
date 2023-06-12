@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT  Book-info (title,author,isbn,publisher-name,edition,price)>
+     <!ELEMENT title (#PCDATA)>
+     <!ELEMENT author (#PCDATA)>
+     <!ELEMENT isbn (#PCDATA)>
+     <!ELEMENT publisher-name (#PCDATA)>
+     <!ELEMENT edition (#PCDATA)>
+     <!ELEMENT price (#PCDATA)>
