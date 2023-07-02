@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>Inch to Feet Conversion</title>
+</head>
+<body>
+    <input oninput=feet() onchange=feet() type="textbox" id="inch" placeholder="Inches">
+    <input oninput=inches() onchange=inches() type="textbox" id="feet" placeholder="Feet">
+</body>
+<script>
+    function feet()
+    {
+        var t=document.getElementById("inch");
+        var res=(t.value/12);
+        document.getElementById("feet").value=res;
+    } 
+    function inches()
+    {
+        var t=document.getElementById("feet");
+        var res=(t.value*12);
+        document.getElementById("inch").value=res;
+    } 
+    
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MY FORM</title>
+  <style>
+  fieldset{
+  width:500px;
+  padding:10px;
+  margin:20px;
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+</head>
+
+<body>
+  <fieldset>
+	Name<input type="text" placeholder="Full Name"><br>
+	Address<textarea placeholder="Type here"></textarea><br>
+	Age<input type = "number"><br>
+	Gender<select>
+	<option value="Male">Male</option>
+	<option value="Female">Female</option>
+	</select><br>
+	Room Type<input type="radio" name="rooms">A/C
+	<input type="radio" name="rooms">Non-A/C
+	<input type="radio" name="rooms">Deluxe<br>
+	Payment<select>
+	<option value="Cash" >Cash</option>
+	<option value="Credit" checked="checked">Credit/Debit Card</option>
+	<option value="Coupons" >Coupons</option>
+	</select><br>
+  </fieldset>
+</body>
+</html>

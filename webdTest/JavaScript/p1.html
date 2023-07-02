@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    label,input,select {
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+    <form action="#">
+        <label for="type">Card Type</label>
+        <select name="card-type" id="ctype" required>
+            <option value="Master">Master Card</option>
+            <option value="Visa">Visa</option>
+            <option value="AExp">American Express</option>
+        </select><br/>
+        <label for="card-no">Card Number:</label>
+        <input type="text" name="card-no" id="cno" pattern="^[0-9]*" required><br />
+        <input type="button" value="Submit" onclick="validate()">
+    </form>
+    <script>
+        function validate() {
+            var card_type = document.getElementById("ctype").value;
+            var card_no = document.getElementById("cno").value;
+            var val = false;
+
+            if (card_type === "Master") {
+                var prefix = parseInt(card_no.substring(0, 2));
+                if (prefix >= 51 && prefix <= 55 && card_no.length == 16) {
+                    val = true;
+                }
+            }
+            else if (card_type === "Visa") {
+                var prefix = parseInt(card_no.substring(0, 1));
+                if (prefix === 4 && (card_no.length === 13 || card_no.length === 16)) {
+                    val = true;
+                }
+            }
+            else if (card_type === "AExp") {
+                var prefix = parseInt(card_no.substring(0, 2));
+                if ((prefix === 34 || prefix === 37) && card_no.length === 15) {
+                    val = true;
+                }
+            }
+
+            if (val) {
+                alert("Your card is valid");
+            } else {
+                alert("Your card is not valid");
+            }
+        }
+    </script>
+</body>
+
+</html>

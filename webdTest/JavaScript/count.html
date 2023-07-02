@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>1st April Tuesday count between 2003 2023</title>
+</head>
+<body>
+    <p id="years"></p>    
+</body>
+<script>
+    var p=document.getElementById("years");
+    var ar=[]
+    for(let year = 2003; year <= 2023; year++)
+    {
+        const aprilFirst = new Date(year, 3, 1); // April is month number 3 (0-based index)
+        if (aprilFirst.getDay() === 2) {
+          ar.push(year);
+        }  
+    }
+    p.innerHTML=ar;
+    
+</script>
+</html>
